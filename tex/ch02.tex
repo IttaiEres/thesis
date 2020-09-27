@@ -53,7 +53,7 @@ Across all DC regions, 55\% exhibited a higher contact frequency in chimpanzees,
 \label{fig:ch02-fig3}
 \end{figure}
 
-Next, we turned our attention to higher-order chromosomal structures by characterizing TADs in each species. Previous studies indicate that the human and chimpanzee genomes share a high degree of synteny \cite{Yunis.1982, Yunis.1980, Scally.2012, Kehrer-sawatzki.2007, Catacchio.2018, Lee.2016}, a property we confirmed by tiling each genome into various bin sizes and using a reciprocal best hits liftOver method to identify syntenic regions (see Methods and S11 Fig). To infer steady-state TAD structures, we pooled reads across all individuals within each species to create `high-density consensus' Hi-C maps for humans and chimpanzees \cite{Durand.2016}. We used the Arrowhead algorithm at 10 kb resolution \cite{Durand.2016} to independently infer 11,298 TADs in humans and 10,505 TADs in chimpanzees (see Methods). We then used liftOver to identify orthologous genomic regions that corresponded to these TADs, and removed 10\% of domains for which orthology could not be identified (S11 and S12 Tables list the TADs identified in each species; S13 Table lists the orthologous locations of the combined TADs). Once orthology has been established, for each TAD, we considered the domain conserved in humans and chimpanzees when 90\% of the TAD interval overlapped reciprocally between species (see Methods). Using this approach, we found that only ~$\sim$43\% of TADs discovered in humans and chimpanzees are shared (Fig 4A).
+Next, we turned our attention to higher-order chromosomal structures by characterizing TADs in each species. Previous studies indicate that the human and chimpanzee genomes share a high degree of synteny \cite{Yunis.1982, Yunis.1980, Scally.2012, Kehrer-sawatzki.2007, Catacchio.2018, Lee.2016}, a property we confirmed by tiling each genome into various bin sizes and using a reciprocal best hits liftOver method to identify syntenic regions (see Methods and S11 Fig). To infer steady-state TAD structures, we pooled reads across all individuals within each species to create `high-density consensus' Hi-C maps for humans and chimpanzees \cite{Durand.2016}. We used the Arrowhead algorithm at 10 kb resolution \cite{Durand.2016} to independently infer 11,298 TADs in humans and 10,505 TADs in chimpanzees (see Methods). We then used liftOver to identify orthologous genomic regions that corresponded to these TADs, and removed 10\% of domains for which orthology could not be identified (S11 and S12 Tables list the TADs identified in each species; S13 Table lists the orthologous locations of the combined TADs). Once orthology has been established, for each TAD, we considered the domain conserved in humans and chimpanzees when 90\% of the TAD interval overlapped reciprocally between species (see Methods). Using this approach, we found that only $\sim$43\% of TADs discovered in humans and chimpanzees are shared (Fig 4A).
 
 \begin{figure}
 \centering
@@ -206,7 +206,7 @@ We also obtained data on H3K4me1, H3K4me3, and H3K27ac collected in human iPS-18
 
 \section{Acknowledgments}
 
-We thank the members of the Gilad, Nobrega, and Stephens labs for helpful discussions, particularly Matthew Stephens, Bryan J. Pavlovic, Débora R. Sobreira, Abhishek Sarkar, and Lindsey E. Montefiori. We thank Natalia Gonzales for help editing the paper.
+We thank the members of the Gilad, Nobrega, and Stephens labs for helpful discussions, particularly Matthew Stephens, Bryan J. Pavlovic, D\'ebora R. Sobreira, Abhishek Sarkar, and Lindsey E. Montefiori. We thank Natalia Gonzales for help editing the paper.
 
 \subsection{Author contributions}
 
@@ -283,6 +283,9 @@ IEE and YG conceived of the study and designed the experiments. IEE performed th
 \begin{figure}[!htb]
 \centering
 \includegraphics[page=1][width=6in]{img/figS10.pdf}
+\end{figure}
+
+\begin{figure}[!htb]
 \includegraphics[page=2][width=6in]{img/figS10.pdf}
 \caption[Further visual examples of DC and non-DC interactions; conserved and divergent TADs.]{\textbf{S10. Further visual examples of DC and non-DC interactions; conserved and divergent TADs.} (A) PyGenomeTracks plots \cite{Ramirez.2018} of a chromosome 19 interaction between bins 80 kb away for human (left panel) and chimpanzee (right panel). The bin pair tested is indicated by a black star, and was found to be DC between species. (B) Same as A, but for a conserved (non-DC) interaction on chromosome 1 separated by 100kb. (C-H) Examples of contact maps (created with PyGenomeTracks \cite{Ramirez.2018}) and Arrowhead-inferred TAD structures (black lines) in humans (left) and chimpanzees (right), across a number of different chromosomes. In most examples, inference based on the algorithm indicates shared and species-specific domains, yet these are difficult to ascertain based on visual inspection, as discussed.}
 \label{fig:ch02-figS10}
@@ -312,7 +315,7 @@ IEE and YG conceived of the study and designed the experiments. IEE performed th
 \begin{figure}[!htb]
 \centering
 \includegraphics[width=6in]{img/figS14.pdf}
-\caption[Higher-order chromosomal structure in humans and chimpanzees with alternative algorithms (TopDom).]{\textbf{S14. Higher-order chromosomal structure in humans and chimpanzees with alternative algorithms (TopDom).} (A) Across different resolutions (x-axis), we plotted the number of shared and species-specific domains (y-axis) identified with TopDom \cite{Shin.2016} on HOMER-normalized Hi-C maps from each individual. We called domain conservation here based on the method of Rao et al. \cite{Rao.2014} (highly similar results were observed with our 90\% reciprocal overlap method, described in the text and available in the github repository associated with the paper). Domain count values represent the average interspecies sharing across all individuals, with no filtering for domain robustness (that is, assessing all domains discovered and orthologously mappable). Under this analysis paradigm we observe relatively low sharing across species (maximum of 30\% at 25 kb). (B) Same as A, but this time, only considering TADs that were found across all 4 individuals within either one of the species (fixed TADs). Restricting to this subset increases the maximum percentage of conservation to 42\% at 25 kb resolution, although the set of TADs being examined is much smaller. (C) Same as A, but for TopDom \cite{Shin.2016} boundary inferences instead of domains. We considered boundaries shared between individuals if they had any overlap. (D) Same as B, but for boundaries instead of domains (i.e. considering only boundaries fixed within species). Here, the highest estimate of conservation we obtain is 76\% of boundaries conserved across species at 50 kb resolution. (E) Unsupervised hierarchical clustering of the pairwise proportions of shared TADs between all individuals in our study at a variety of resolutions, using the Rao et al. \cite{Rao.2014} methodology for calling conservation. The first letter in the labels demarcates the species (H for human and C for chimpanzee), and the following symbols indicate sex (male, M or female, F) and batch (1 or 2). Heatmaps are not necessarily symmetric because different numbers of TADs were discovered in different individuals; rows represent an individual?s shared proportion of TADs (individual total) with each other individual. Highly similar clustering results were observed when using our domain conservation calling paradigm (shown in github repository associated with paper). (F) Same as E, but for boundaries instead of domains.}
+\caption[Higher-order chromosomal structure in humans and chimpanzees with alternative algorithms (TopDom).]{\textbf{S14. Higher-order chromosomal structure in humans and chimpanzees with alternative algorithms (TopDom).} (A) Across different resolutions (x-axis), we plotted the number of shared and species-specific domains (y-axis) identified with TopDom \cite{Shin.2016} on HOMER-normalized Hi-C maps from each individual. We called domain conservation here based on the method of Rao et al. \cite{Rao.2014} (highly similar results were observed with our 90\% reciprocal overlap method, described in the text and available in the github repository associated with the paper). Domain count values represent the average interspecies sharing across all individuals, with no filtering for domain robustness (that is, assessing all domains discovered and orthologously mappable). Under this analysis paradigm we observe relatively low sharing across species (maximum of 30\% at 25 kb). (B) Same as A, but this time, only considering TADs that were found across all 4 individuals within either one of the species (fixed TADs). Restricting to this subset increases the maximum percentage of conservation to 42\% at 25 kb resolution, although the set of TADs being examined is much smaller. (C) Same as A, but for TopDom \cite{Shin.2016} boundary inferences instead of domains. We considered boundaries shared between individuals if they had any overlap. (D) Same as B, but for boundaries instead of domains (i.e. considering only boundaries fixed within species). Here, the highest estimate of conservation we obtain is 76\% of boundaries conserved across species at 50 kb resolution. (E) Unsupervised hierarchical clustering of the pairwise proportions of shared TADs between all individuals in our study at a variety of resolutions, using the Rao et al. \cite{Rao.2014} methodology for calling conservation. The first letter in the labels demarcates the species (H for human and C for chimpanzee), and the following symbols indicate sex (male, M or female, F) and batch (1 or 2). Heatmaps are not necessarily symmetric because different numbers of TADs were discovered in different individuals; rows represent an individual's shared proportion of TADs (individual total) with each other individual. Highly similar clustering results were observed when using our domain conservation calling paradigm (shown in github repository associated with paper). (F) Same as E, but for boundaries instead of domains.}
 \label{fig:ch02-figS14}
 \end{figure}
 
@@ -367,94 +370,117 @@ IEE and YG conceived of the study and designed the experiments. IEE performed th
 \caption[S1. HOMER-called contacts, H21792.]{\textbf{S1. HOMER-called contacts, H21792.}}
 \label{tab:ch02-s1}
 \end{table}
+
 \begin{table}[!htb]
 \caption[S2. HOMER-called contacts, H28126.]{\textbf{S2. HOMER-called contacts, H28126.}}
 \label{tab:ch02-s2}
 \end{table}
+
 \begin{table}[!htb]
 \caption[S3. HOMER-called contacts, H28815.]{\textbf{S3. HOMER-called contacts, H28815.}}
 \label{tab:ch02-s3}
 \end{table}
+
 \begin{table}[!htb]
 \caption[S4. HOMER-called contacts, H28834.]{\textbf{S4. HOMER-called contacts, H28834.}}
 \label{tab:ch02-s4}
 \end{table}
+
 \begin{table}[!htb]
 \caption[S5. HOMER-called contacts, C3649.]{\textbf{S5. HOMER-called contacts, C3649.}}
 \label{tab:ch02-s5}
 \end{table}
+
 \begin{table}[!htb]
 \caption[S6. HOMER-called contacts, C40300.]{\textbf{S6. HOMER-called contacts, C40300.}}
 \label{tab:ch02-s6}
 \end{table}
+
 \begin{table}[!htb]
 \caption[S7. HOMER-called contacts, C3624.]{\textbf{S7. HOMER-called contacts, C3624.}}
 \label{tab:ch02-s7}
 \end{table}
+
 \begin{table}[!htb]
 \caption[S8. HOMER-called contacts, C3651.]{\textbf{S8. HOMER-called contacts, C3651.}}
 \label{tab:ch02-s8}
 \end{table}
+
 \begin{table}[!htb]
 \caption[S9. Orthology calling statistics..]{\textbf{S9. Orthology calling statistics.}}
 \label{tab:ch02-s9}
 \end{table}
+
 \begin{table}[!htb]
 \caption[S10. Differentially contacting (DC) regions.]{\textbf{S10. Differentially contacting (DC) regions.}}
 \label{tab:ch02-s10}
 \end{table}
+
 \begin{table}[!htb]
 \caption[S11. Human consensus Arrowhead-inferred TADs.]{\textbf{S11. Human consensus Arrowhead-inferred TADs.}}
 \label{tab:ch02-s11}
 \end{table}
+
 \begin{table}[!htb]
 \caption[S12. Chimpanzee consensus Arrowhead-inferred TADs.]{\textbf{S12. Chimpanzee consensus Arrowhead-inferred TADs.}}
 \label{tab:ch02-s12}
 \end{table}
+
 \begin{table}[!htb]
 \caption[S13. Human-Chimpanzee orthologous TAD coordinates.]{\textbf{S13. Human-Chimpanzee orthologous TAD coordinates.}}
 \label{tab:ch02-s13}
 \end{table}
+
 \begin{table}[!htb]
 \caption[S14. ChromHMM genic enhancer annotation enrichments.]{\textbf{S13. ChromHMM genic enhancer annotation enrichments.}}
 \label{tab:ch02-s14}
 \end{table}
+
 \begin{table}[!htb]
 \caption[S15. ENCODE chromatin mark sources.]{\textbf{S15. ENCODE chromatin mark sources.}}
 \label{tab:ch02-s15}
 \end{table}
+
 \begin{table}[!htb]
 \caption[S16. Sample metadata.]{\textbf{S16. Sample metadata.}}
 \label{tab:ch02-s16}
 \end{table}
+
 \begin{table}[!htb]
 \caption[S17. 10kb Arrowhead TAD inferences, H21792.]{\textbf{S17. 10kb Arrowhead TAD inferences, H21792.}}
 \label{tab:ch02-s17}
 \end{table}
+
 \begin{table}[!htb]
 \caption[S18. 10kb Arrowhead TAD inferences, H28126.]{\textbf{S18. 10kb Arrowhead TAD inferences, H28126.}}
 \label{tab:ch02-s18}
 \end{table}
+
 \begin{table}[!htb]
 \caption[S19. 10kb Arrowhead TAD inferences, H28815.]{\textbf{S19. 10kb Arrowhead TAD inferences, H28815.}}
 \label{tab:ch02-s19}
 \end{table}
+
 \begin{table}[!htb]
 \caption[S20. 10kb Arrowhead TAD inferences, H28834.]{\textbf{S20. 10kb Arrowhead TAD inferences, H28834.}}
 \label{tab:ch02-s20}
 \end{table}
+
 \begin{table}[!htb]
 \caption[S21. 10kb Arrowhead TAD inferences, C3649.]{\textbf{S21. 10kb Arrowhead TAD inferences, C3649.}}
 \label{tab:ch02-s21}
 \end{table}
+
 \begin{table}[!htb]
 \caption[S22. 10kb Arrowhead TAD inferences, C40300.]{\textbf{S22. 10kb Arrowhead TAD inferences, C40300.}}
 \label{tab:ch02-s22}
 \end{table}
+
 \begin{table}[!htb]
 \caption[S23. 10kb Arrowhead TAD inferences, C3624.]{\textbf{S23. 10kb Arrowhead TAD inferences, C3624.}}
 \label{tab:ch02-s23}
 \end{table}
+
 \begin{table}[!htb]
 \caption[S24. 10kb Arrowhead TAD inferences, C3651.]{\textbf{S24. 10kb Arrowhead TAD inferences, C3651.}}
 \label{tab:ch02-s24}
